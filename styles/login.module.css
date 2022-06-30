@@ -1,0 +1,23 @@
+.googleBtn{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content:center;
+    align-items: flex-end;
+    height: 250px;
+    margin-bottom: 66vh;
+    align-content: center;
+}
+.gogBtn{
+    padding: 0;
+border: none;
+background: none;
+    margin-top:1vh;
+	border-radius:none;
+    background-color:lightcyan;
+    padding:5px;
+    -webkit-box-shadow: -1px 0px 8px 1px rgba(0,0,0,0.18);
+-moz-box-shadow: -1px 0px 8px 1px rgba(0,0,0,0.18);
+box-shadow: -1px 0px 8px 1px rgba(0,0,0,0.18);
+
+}

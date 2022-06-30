@@ -1,0 +1,52 @@
+.aboutPic {
+    border-radius: 50%;
+    margin: 29px;
+    
+
+
+
+}
+
+.aboutMe {
+    background-color: #f2f0ea;
+    padding: 29px;
+    
+    
+}
+.aboutWrapper{
+    padding-top: 10vh;
+    width: 300px;
+    min-width: 200px;
+    
+}
+
+.aboutWrapper > span >span + img{
+    border: 2px dashed #092435 !important;
+    
+  }
+
+  .aboutText{
+    margin: 40px;
+    margin-top: 5vw;
+    align-self: flex-start;
+  }
+
+  .aboutMeWrapper{
+    display: flex;
+
+    
+  }
+  @media screen and (min-width: 100px) and (max-width: 700px) {
+
+    .aboutMeWrapper{
+        display: block;
+    
+        
+      }
+}
+
+.high{
+  
+   margin: 200px; 
+   padding: 20px;
+}

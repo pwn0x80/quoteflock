@@ -1,0 +1,40 @@
+.topWrapper{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+.leftwrapper{
+    flex: 7;
+    margin-left: 16px;
+    justify-content: flex-end;
+
+}
+
+.rightwrapper{
+    flex: 1;
+    justify-content: flex-end;
+}
+.icon {
+    padding: 8px;
+    font-size: 30px;
+}
+.text {
+    padding: 8px;
+    font-size: 1.5em;
+}
+.rightboxwrapper{
+    display: flex;
+}
+
+.footer{
+   display: flex;
+   padding: 2vw;
+   bottom: 0;
+    background-color: #f2f0ea;
+   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+   Bitstream Vera Sans Mono, Courier New, monospace;
+   justify-content: center;
+   
+}

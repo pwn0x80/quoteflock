@@ -1,0 +1,54 @@
+
+.background {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../public/background/background.jpg') ; 
+    background-attachment: fixed;
+    height:100vh;
+}
+
+.container {
+
+
+}
+.wrapperbox{
+    margin-right:200px;
+    margin-bottom: 22px;
+
+}
+.bgtext{
+    position: relative;
+    margin: 0 auto; text-align: center;
+    font-size: 7vmin;
+    font-weight: 600;
+    font-family: Playfair Display,serif;
+
+}
+.bgtextin {
+    position: absolute;
+    top: 0; width: 100%;
+    position: relative;
+    margin: 0 auto; text-align: center;
+    font-size: 7vmin;
+    font-weight: 600;
+    font-family: Playfair Display,serif;
+
+
+}
+
+.bgtextin2 {
+    position: absolute;
+    top: 0; width: 100%;
+    position: relative;
+    margin: 0 auto; text-align: center;
+    font-size: 7vmin;
+    font-weight: 600;
+    font-family: Playfair Display,serif;
+
+}
+
