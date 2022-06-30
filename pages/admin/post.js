@@ -1,9 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useQuill } from "react-quilljs";
 import fetch from "isomorphic-unfetch";
 import { SkynetClient } from "skynet-js";
 import { db } from "../../config/firebase.config";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  serverTimestamp,
+} from "firebase/firestore";
 import { AuthContext } from "../../src/Context/authContext";
 import { Router, useRouter } from "next/router";
 // or const { useQuill } = require('react-quilljs');
@@ -50,12 +55,11 @@ export default function IndexPage() {
       saveToServer(file);
     };
   };
-
+  const [isload, isloadSet] = useState(false);
   useEffect(() => {
     if (user == null) {
       router.push("/login");
     }
-    console.log("!");
     if (quill) {
       quill.getModule("toolbar").addHandler("image", selectLocalImage);
       quill.clipboard.dangerouslyPasteHTML("<h1>React Hook for Quill!</h1>");
@@ -66,13 +70,16 @@ export default function IndexPage() {
   }, [quill]);
 
   let submitTrigger = async (e) => {
+    isloadSet(!isload);
     //    console.log("subtriggert");
     //   console.log(quill.root.innerHTML);    constant change event
     const querySnapshot = collection(db, "posts");
     addDoc(querySnapshot, {
       post: quill.root.innerHTML,
+      timestamp: serverTimestamp(),
     }).then(() => {
-      // console.log("done");
+      console.log("submited");
+      isloadSet(false);
     });
   };
 
@@ -90,7 +97,7 @@ export default function IndexPage() {
             }}
             onClick={submitTrigger}
           >
-            Submit
+            {isload ? "loading" : "Submit"}
           </button>
         </div>
       </div>

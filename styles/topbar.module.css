@@ -11,12 +11,16 @@
     justify-content: flex-end;
 
 }
+.leftboxwrapper{
+    display: flex;
+}
 
 .rightwrapper{
     flex: 1;
     justify-content: flex-end;
 }
 .icon {
+    cursor: pointer;
     padding: 8px;
     font-size: 30px;
 }

@@ -8,3 +8,12 @@ export const ContextCalls = async (dispatch) => {
     console.error(e);
   }
 };
+
+export const logoutCall = async (dispatch) => {
+  try {
+    //   console.log("sad");
+    const res = await AuthService.logout();
+  } catch (e) {
+    console.error(e);
+  }
+};

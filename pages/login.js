@@ -1,6 +1,7 @@
 import firebase from "../config/firebase.config";
-import React, { Component, useContext, useEffect } from "react";
-import { ContextCalls } from "../component/loginCall";
+import React, { Component, useContext, useEffect, useState } from "react";
+import { ContextCalls, logoutCall } from "../component/loginCall";
+
 import { AuthContext } from "../src/Context/authContext";
 import styles from "../styles/login.module.css";
 import { FcGoogle } from "react-icons/fc";
@@ -10,11 +11,19 @@ export default function Login() {
   const { loading, isFetching, user, dispatch } = useContext(AuthContext);
   const router = useRouter();
   console.log("=======================");
+  const [err, errSet] = useState();
   useEffect(() => {
+    console.log(loading);
     if (user != null) {
+      console.log("nono");
       // console.log(user);
-
-      router.push("/admin/post");
+      if (user.uid != "V9ZnESF1Z1UevyzWtgUx1nmOnbH3") {
+        logoutCall(dispatch);
+        errSet(true);
+        console.log(err);
+      } else {
+        router.push("/admin/post");
+      }
     }
   }, [user]);
   // console.log(user);
@@ -29,11 +38,14 @@ export default function Login() {
   }
 
   return (
-    <div className={styles.googleBtn}>
-      <FcGoogle size="2rem" />
-      <button className={styles.gogBtn} onClick={loginTrigger}>
-        google
-      </button>
+    <div>
+      <div className={styles.googleBtn}>
+        <FcGoogle size="2rem" />
+        <button className={styles.gogBtn} onClick={loginTrigger}>
+          google
+        </button>
+      </div>
+      {err ? "Only admin can Login" : ""}
     </div>
   );
 }
