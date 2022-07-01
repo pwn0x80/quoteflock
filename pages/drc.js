@@ -1,6 +1,6 @@
-import Topbar from "../component/topbar";
-
 import { db } from "../config/firebase.config";
+import Effec from "../component/drcpost";
+
 import {
   addDoc,
   collection,
@@ -12,7 +12,6 @@ import styles from "../styles/drcPost.module.css";
 import { SiTmobile } from "react-icons/si";
 import { IoTrailSignOutline } from "react-icons/io";
 export default function drc({ val }) {
-  console.log(val);
   let tmp = () => {
     return (
       <div className={styles.bg}>
@@ -30,7 +29,9 @@ export default function drc({ val }) {
   };
   return (
     <>
-      <div>{tmp(val)}</div>
+      <div className={styles.postWrapper}>
+        <Effec val={val} />{" "}
+      </div>
     </>
   );
 }
@@ -42,9 +43,8 @@ export async function getStaticProps() {
   let val = [];
   querySnapshot.forEach((doc) => {
     val.push({ id: doc.id, post: doc.data().post });
-    console.log(doc.id, " => ", doc.data());
+    //    console.log(doc.id, " => ", doc.data());
   });
-  console.log(val);
 
   return {
     props: {

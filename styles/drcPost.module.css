@@ -32,3 +32,71 @@ box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.31);
     margin: 0%;
     top: 0px;
 }
+
+
+
+
+.App {
+    font-family: sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .MuiDivider-root {
+    margin: 40px 0 !important;
+  }
+  
+  /* mansonryCss item styles */
+  
+  .mymasonrygrid {
+
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -2px; /* gutter size offset */
+    width: auto;
+  }
+  .mymasonrygridcolumn {
+
+    padding: 2px;
+    padding-left: 20px; /* gutter size */
+    background-clip: padding-box;
+  }
+  
+  /* Style your items */
+  .mymasonrygridcolumn > div {
+    /* change div to reference your elements you put in <Masonry> */
+    padding: 21px;
+    
+    margin-top: 20px;
+    background: skyblue;
+    margin-bottom: 20px;
+    color: white;
+    word-wrap: break-word;
+    border-radius: 20px;
+  }
+  
+  .idxnum {
+    font-size: 30px;
+  }
+  
+  .logoimg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+
+
+
+
+  .postWrapper{
+    
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    margin:20px;
+    margin-right: 9vw;
+    margin-left: 3vw;
+
+  }

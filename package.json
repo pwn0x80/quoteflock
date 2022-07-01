@@ -21,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-firebase-hooks": "^5.0.3",
     "react-icons": "^4.4.0",
+    "react-masonry-css": "^1.0.16",
     "react-quilljs": "^1.3.0",
     "skynet-js": "^4.3.0"
   },
