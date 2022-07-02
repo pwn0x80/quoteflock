@@ -47,7 +47,6 @@ export default function About() {
           </span>
           <Quotes />
         </div>
-        <div className={styles.aboutMes}></div>
       </div>
     </div>
   );
