@@ -42,7 +42,7 @@ export default function About() {
               <h2>
                 <AiOutlineMail style={{ marginRight: 20 }} />
               </h2>
-              dpakrc26@gmail.com{" "}
+              dpakrc26@gmail.com
             </span>
           </span>
           <Quotes />
