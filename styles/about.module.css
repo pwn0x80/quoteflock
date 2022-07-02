@@ -8,12 +8,14 @@
 }
 
 .aboutMe {
+  
     background-color: #f2f0ea;
     padding: 29px;
     
     
 }
 .aboutWrapper{
+  
     padding-top: 10vh;
     width: 300px;
     min-width: 200px;
@@ -26,6 +28,11 @@
   }
 
   .aboutText{
+    font-family: Playfair Display,serif;
+    background-image: url('../public/x.svg');
+    background-repeat: no-repeat;
+    background-position: right; 
+
     margin: 40px;
     margin-top: 5vw;
     align-self: flex-start;
@@ -46,6 +53,7 @@
 }
 
 .high{
+  
   
    margin: 200px; 
    padding: 20px;

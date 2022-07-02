@@ -10,6 +10,7 @@
     "buildm": "next build && next export"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "firebase": "^9.8.4",
     "firebaseui": "^6.0.1",
     "framer-motion": "^6.3.15",
