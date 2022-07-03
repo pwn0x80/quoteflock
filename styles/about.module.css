@@ -17,7 +17,6 @@
     
 }
 .aboutWrapper{
-  background-image: url('../public/x2.svg');
   background-repeat: no-repeat;
   background-position:  right ; 
 
@@ -34,8 +33,7 @@
 
   .aboutText{
 
-    background-image: url('../public/x.svg');
-    background-repeat: no-repeat;
+      background-repeat: no-repeat;
       background-position:  right ; 
     font-family: Playfair Display,serif;
 
