@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useQuill } from "react-quilljs";
 import fetch from "isomorphic-unfetch";
 import { SkynetClient } from "skynet-js";
@@ -6,15 +6,22 @@ import { db } from "../../config/firebase.config";
 import {
   addDoc,
   collection,
+  doc,
+  getDoc,
   getDocs,
   serverTimestamp,
+  setDoc,
 } from "firebase/firestore";
+
 import { AuthContext } from "../../src/Context/authContext";
 import { Router, useRouter } from "next/router";
 // or const { useQuill } = require('react-quilljs');
 
 // import "quill/dist/quill.snow.css"; // Add css for snow theme
+
 export default function IndexPage() {
+  const [tag, setTag] = useState("");
+
   const { loading, isFetching, user, dispatch } = useContext(AuthContext);
 
   const router = useRouter();
@@ -56,6 +63,7 @@ export default function IndexPage() {
     };
   };
   const [isload, isloadSet] = useState(false);
+
   useEffect(() => {
     if (user == null) {
       router.push("/login");
@@ -77,7 +85,27 @@ export default function IndexPage() {
     addDoc(querySnapshot, {
       post: quill.root.innerHTML,
       timestamp: serverTimestamp(),
-    }).then(() => {
+    }).then(async (docRef) => {
+      //post id
+      let userRefs = doc(db, "posts/" + docRef.id);
+      console.log(userRefs);
+      if (tag != "") {
+        const ref = doc(db, "tag", tag);
+        const specifcCollectionDoc = await getDoc(ref);
+
+        if (specifcCollectionDoc.data() != null) {
+          await setDoc(ref, {
+            id: [...specifcCollectionDoc.data().id, userRefs],
+          });
+        } else {
+          await setDoc(ref, {
+            id: [userRefs],
+          });
+        }
+      }
+
+      // console.log(docRef._key.path);
+
       console.log("submited");
       isloadSet(false);
     });
@@ -88,6 +116,7 @@ export default function IndexPage() {
       <div style={{ marginTop: "40px", width: "100vw", height: "80vh" }}>
         <div ref={quillRef} />
         <div>
+          <input onChange={(e) => setTag(e.target.value)} type="text" />
           <button
             style={{
               marginTop: "1vh",

@@ -18,7 +18,7 @@ export default function Login() {
       console.log("nono");
       // console.log(user);
       if (
-        user.uid != "V9ZnESF1Z1UevyzWtgUx1nmOnbH3" ||
+        user.uid != "V9ZnESF1Z1UevyzWtgUx1nmOnbH3" &&
         user.uid != "pv4TCSSn7Ve1HBAjrcBxUNBqLCB3"
       ) {
         logoutCall(dispatch);
