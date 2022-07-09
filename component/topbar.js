@@ -55,7 +55,7 @@ export default function topbar() {
               </span>
             </Link>
             {user ? (
-              <span className={styles.icon} onClick={() => logout}>
+              <span className={styles.icon} onClick={logout}>
                 <IoTrailSignOutline size="1.5rem" />
               </span>
             ) : (
