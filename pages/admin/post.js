@@ -106,7 +106,7 @@ export default function IndexPage() {
 
       // console.log(docRef._key.path);
 
-      console.log("submited");
+      //    console.log("submited");
       isloadSet(false);
     });
   };

@@ -7,15 +7,21 @@
     height: 250px;
     margin-bottom: 66vh;
     align-content: center;
+    
 }
 .gogBtn{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:large;
+    color: black;
+    margin: 15px;
     padding: 0;
 border: none;
 background: none;
     margin-top:1vh;
 	border-radius:none;
-    background-color:lightcyan;
-    padding:5px;
+    background-color:rgb(224, 244, 224);
+    
+    padding: 20px 60px;
     -webkit-box-shadow: -1px 0px 8px 1px rgba(0,0,0,0.18);
 -moz-box-shadow: -1px 0px 8px 1px rgba(0,0,0,0.18);
 box-shadow: -1px 0px 8px 1px rgba(0,0,0,0.18);

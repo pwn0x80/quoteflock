@@ -9,8 +9,9 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <>
-      <Topbar />
       <AuthContextProvider>
+        <Topbar />
+
         <Component {...pageProps} />
       </AuthContextProvider>
       {router.pathname != "/admin/post" ? <Footer /> : null}

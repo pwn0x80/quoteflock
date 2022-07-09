@@ -1,14 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 import styles from "../styles/drcPost.module.css";
-
-let items = [
-  { id: 1, name: "one" },
-  { id: 2, name: "two" },
-  { id: 3, name: "three" },
-  { id: 4, name: "four" },
-  { id: 5, name: "five" },
-];
 
 const breakpointColumnsObj = {
   default: 2,
@@ -18,7 +10,6 @@ const breakpointColumnsObj = {
 };
 
 export default function effec({ val }) {
-  console.log(val);
   return (
     <div className="App">
       <Masonry
@@ -29,9 +20,9 @@ export default function effec({ val }) {
         {val.map((user) => {
           return (
             //   <div key={user.id}>
-            //    <div className={styles.container}>
-            <div dangerouslySetInnerHTML={{ __html: user.post }} />
-            //     </div>
+            <div key={user.id} className={styles.container}>
+              <div dangerouslySetInnerHTML={{ __html: user.post }} />
+            </div>
             // </div>
           );
         })}

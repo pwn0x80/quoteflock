@@ -6,19 +6,32 @@ import { BiHomeAlt } from "react-icons/bi";
 import Link from "next/link";
 import { IoTrailSignOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { logoutCall } from "./loginCall";
+import { AuthContext } from "../src/Context/authContext";
+import { useContext } from "react";
+import { Router, useRouter } from "next/router";
+import { HiLogout } from "react-icons/hi";
+
 export default function topbar() {
+  const { loading, isFetching, user, dispatch } = useContext(AuthContext);
+  const router = useRouter();
+  let logout = () => {
+    logoutCall();
+    router.push("/");
+  };
+
   const squareVariants = {
     visible: {
       opacity: 1,
     },
-    hidden: { opacity: 0, transition: { delay: 2 } },
+    hidden: { opacity: 0, transition: { delay: 0 } },
   };
   return (
     <motion.div
       variants={squareVariants}
       initial="hidden"
       animate="visible"
-      transition={{ delay: 10 }}
+      transition={{ delay: 1 }}
     >
       <div className={styles.topWrapper}>
         <div className={styles.leftwrapper}>
@@ -38,9 +51,16 @@ export default function topbar() {
             </Link>
             <Link href="/login" scroll={false}>
               <span className={styles.icon}>
-                <IoTrailSignOutline size="1.5rem" />
+                <HiLogout size="1.5rem" />
               </span>
             </Link>
+            {user ? (
+              <span className={styles.icon} onClick={() => logout}>
+                <IoTrailSignOutline size="1.5rem" />
+              </span>
+            ) : (
+              ""
+            )}
           </div>
         </div>
 
